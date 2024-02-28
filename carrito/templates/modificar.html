@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos2.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md mb-4 bg-dark navbar-dark">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="{% url 'inicio' %}" style="margin-right: 20px;">
+      <img src="{% static 'img/medieval.png' %}" style="display: block; margin-left: auto; margin-right: auto;" height="45 px">
+    </a>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'inicio' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'galeria' %}">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contactanos' %}">Contáctanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'carrito' %}">Carrito</a>
+        </li>
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'crud' %}">CRUD de Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar sesion</a>
+          </li>
+        {% endif %}    
+       
+      </ul>
+    </div>
+
+  </nav>
+
+
+  <br>
+  <br><br>
+
+      <div class="container">
+        <h2>Modificando Producto</h2>
+
+            <form method="POST" action="#" id="formulario">
+                {% csrf_token %}
+
+                  <div class="form-group">
+                      {{ formMod.idProducto.label }}
+                      {{ formMod.idProducto }}
+      
+                  </div>
+      
+                  <div class="form-group">
+                      {{ formMod.nombreProducto.label }}
+                      {{ formMod.nombreProducto }}
+      
+                  </div>
+      
+                  <div class="form-group">
+                      {{ formMod.descripcionProducto.label }}
+                      {{ formMod.descripcionProducto }}
+      
+                  </div>
+      
+                  <div class="form-group">
+                      {{ formMod.categoriaProducto.label }}
+                      {{ formMod.categoriaProducto }}
+      
+                  </div>
+      
+                  <div class="form-group">
+                    {{ formMod.precioProducto.label }}
+                    {{ formMod.precioProducto }}
+      
+                  </div>
+      
+                  <div class="form-group">
+                   {{ formMod.stockProducto.label }}
+                   {{ formMod.stockProducto }}
+      
+                  </div>
+
+                <input type="submit" class="btn btn-primary" value="Modificar">
+                <a href="{% url 'crud' %}" class="btn btn-success">Mostrar Productos</a>
+
+
+            </form>
+     </div>    
+</body>
+</html>

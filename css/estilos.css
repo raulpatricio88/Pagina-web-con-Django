@@ -1,0 +1,153 @@
+.color {
+    color: white;
+}
+
+
+#caja {
+    width: 300px;
+    border: 15px solid green;
+    padding: 20px;
+    margin: 20px;
+}
+
+footer {
+    padding-top: 10px;
+    color: #c5c5c5;
+    background-color: #212529;
+    height: auto;
+
+
+}
+
+div {
+    margin: auto;
+}
+
+.text {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    line-height: 2.5
+}
+
+.navbar {
+    background-color: #212529;
+    position: fixed;
+    z-index: 1;
+    display: flex;
+
+    width: 100%;
+    top: 0;
+
+
+}
+
+.nav-link {
+    color: white;
+}
+
+.textoContacto {
+    margin-left: 15px;
+
+}
+
+
+#parrafo {
+    background-color: white;
+    font-family: 'Century Gothic';
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: lighter;
+
+
+}
+
+
+
+.row {
+    display: flex;
+
+}
+
+#direccion {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#carousel1 {
+    width: 100%;
+    white-space: hidden;
+
+}
+
+
+#pepe {
+    width: 85%;
+    height: 85%;
+    overflow: hidden;
+
+}
+
+.carousel {
+
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.pepe {
+
+    background: white;
+}
+
+.we {
+
+    width: 100%;
+    height: 400px;
+
+}
+
+.respuesta {
+    font-style: italic;
+    margin-top: 0px;
+
+
+
+
+}
+
+.pregunta {
+
+
+    font-weight: bold;
+}
+
+
+#parrafo {
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    background-color: aliceblue;
+}
+
+.carousel-control-prev {
+    margin-left: 50px;
+
+
+
+
+}
+
+.carousel-control-next {
+    margin-right: 70px;
+
+
+}
+

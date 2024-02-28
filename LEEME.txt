@@ -1,0 +1,9 @@
+Primero instalar Django: en cmd: python -m pip install Django
+para iniciar django: pararse en la carpeta donde esta la pagina web, luego escribir cmd en la ruta y presionar enter, luego en cmd escribir:
+
+py manage.py runserver
+dirigirse a la IP que aparece
+
+pass django:
+admin
+87654321

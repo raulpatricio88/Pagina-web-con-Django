@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctate con GAME OVER</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estiloForm.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="icon" href="img/ajedrez.png">
+
+    <script>
+      function cambiarMAyus(){
+
+        var a= document.getElementById('nom');
+          a.value=a.value.toUpperCase();
+      }
+      function cambiarMAyusDir(){
+
+var a= document.getElementById('dir');
+  a.value=a.value.toUpperCase();
+}
+
+
+      $(function () {
+          $("#miformulario").validate({
+              rules: {
+                  nom: {
+                      required: true,
+                  },
+                  dir: {
+                      required: true,
+                  },
+                  correo: {
+                      required: true,
+                      email: true,
+                  },
+                  pass: {
+                      required: true,
+                      minlength: 8,
+                  },
+                  fono: {
+                      required: true,
+                      number: true,
+                      minlength: 9,
+                  },
+                  fecha: {
+                      required: true,
+                  },
+                  pass2: {
+                      required: true,
+                      minlength: 8,
+                      equalTo: "#pass",
+                  },
+                  productos: {
+                    required:true                    
+                  }
+
+              }, //rules
+              messages: {
+                  nom: {
+                      required: 'Ingrese nombre del usuario',
+                      minlength: 'Caracteres insuficientes (3)',
+                  },
+                  correo: {
+                      required: 'Ingrese su correo electrónico',
+                      email: 'Formato de correo no válido',
+                  },
+                  pass: {
+                      required: 'Ingrese una contraseña',
+                      minlength: 'Caracteres insuficientes',
+                  },
+                  fono: {
+                      required: 'Ingrese su número telefónico',
+                      minlength: 'Cantidad de digitos insuficientes',
+                  },
+                  fecha: {
+                      required: 'Seleccione una fecha válida',
+                      min: 'Fecha no corresponde',
+                  },
+                  pass2: {
+                      required: 'Reingrese su contraseña',
+                      minlength: 'Caracteres insuficientes',
+                      equalTo: 'Las contraseñas no coinciden'
+                  },
+                  productos: {
+                    required: 'Por favor escoja un item!'
+                  },
+                  dir: {
+                      required: 'Ingrese nombre del usuario',
+                      minlength: 'Caracteres insuficientes (8)'
+                  }
+              },
+          });
+      });
+
+
+  </script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md mb-4 bg-dark navbar-dark">
+
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a href="Index.html" style="margin-right: 20px;">
+      <img src="img/medieval.png" style="display: block; margin-left: auto; margin-right: auto;" height="45 px">
+    </a>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="Index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Galeria.html">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="nosotros.html">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Contactanos.html">Contáctanos</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+      <br>
+    
+    <div class="container">
+        <!-- <hr style="height: 20px;"> -->
+        <div class="jumbotron" style="background-color: aliceblue;" >
+            <div class="jumbotron" style="background-color: aliceblue;">
+                    <h2 style="color: brown; font-family:'Courier New', Courier, monospace; font-weight: bold;" >Crea tu cuenta en GAME OVER...</h2>
+                    <br><br><br>
+                    <form id="miformulario" method="post">
+                        <div class="form-group">
+                            <label for="nom">Nombre: </label>
+                            <input type="text" id="nom" name="nom" placeholder="Escriba su nombre aquí..." onchange="cambiarMAyus()" 
+                                class="form-control" minlength="3" required>
+                                <br>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dir">Dirección </label>
+                            <input type="text" id="dir" name="dir" placeholder="Escriba su direccion aquí..."  onchange="cambiarMAyusDir()" 
+                                class="form-control" minlength="8" required> <br>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="correo">Email: </label>
+                          <input type="email" id="correo" name="correo" placeholder="sucorreo@ejemplo.cl" 
+                              class="form-control" minlength="8" required> <br>
+                      </div>
+
+                        <div class="form-group">
+                          <label for="pass">Contraseña: </label>
+                          <input type="password" name="pass" id="pass" required minlength="8" class="form-control" placeholder="Escriba su contraseña aquí..">
+                      </div>
+                      <div class="form-group">
+                          <label for="pass2">Reingresar Contraseña: </label>
+                          <input type="password" name="pass2" id="pass2" required minlength="8" class="form-control">
+                      </div>
+                        
+                        <!--barra de opciones-->
+                        <div class="form-group">
+                            <label for="productos">(Opcional)¿Que tipo de productos prefieres buscar?</label>
+                                <select class="form-control" id="productos">
+                                    <option value="error">Seleccione un tipo de producto...</option>
+                                    <option value="cartas">Cartas</option>
+                                    <option value="tablero">Tablero</option>
+                                    <option value="poker">Póker</option>
+                                </select>
+                        </div> 
+
+                        <br><br>
+                        <input type="submit" value="Enviar" id="enviar" class="btn btn-primary"><!--submit activa el action del principio-->
+
+                        <!--checkbox
+
+                        <label for="">Seleccione:</label>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="titanic" id="peli1" >
+                            <label for="peli1" class="form-check-label">Titanic</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="barbenheimer" id="peli1" >
+                            <label for="peli1" class="form-check-label">Barbenheimer</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="saw" id="peli1" >
+                            <label for="peli1" class="form-check-label">SAW</label>
+                        </div>
+                          -->
+                        <!--checkbox en linea
+
+                        <br>
+
+                        <label for="">Seleccione marca de vehiculo:</label>
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" value="nissan" id="auto1" >
+                            <label for="auto1" class="form-check-label">Nissan</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" value="bmw" id="auto2" >
+                            <label for="auto2" class="form-check-label">BMW</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input type="checkbox" class="form-check-input" value="chevro" id="auto3" >
+                            <label for="auto3" class="form-check-label">Chevrolet</label>
+                        </div>
+                          -->
+                        
+                    </form>
+            </div>
+        </div>
+    </div>
+
+<footer>
+    <div class="row col-12">
+      <div class="col-lg-2">
+        <a href="Index.html">
+          <img src="img/medieval.png" style="display: block; margin-left: auto; margin-right: auto;" height="120 px">
+        </a>
+      </div>
+
+      <div class="col-lg-2">
+        <a href="https://www.facebook.com" target="blank">
+          <img src="img/icons8-facebook-96.png" style="display: block; margin-left: auto; margin-right: auto;"
+            height="60px">
+        </a>
+      </div>
+
+      <div class="col-lg-2">
+        <a href="https://www.instagram.com" target="_blank">
+          <img src="img/icons8-instagram-96.png" style="display: block; margin-left: auto; margin-right: auto;"
+            height="60px">
+        </a>
+      </div>
+      <div class="col col-lg-2">
+        <a href="https://www.twitter.com" target="_blank">
+          <img src="img/icons8-twitter-96.png" style="display: block; margin-left: auto; margin-right: auto;"
+            height="60px">
+        </a>
+      </div>
+      <div class="col-lg-4">
+
+        <div class="row" style="margin-top: 5% ; margin-bottom: 5px; margin-left: 10px;">
+          <img src="img/iconAdress.png" width="22px" height="22px">
+          <p class="textoContacto"> Av. Esq. Blanca 501, Maipú</p>
+
+
+        </div>
+        <div class="row" style="margin-top: 5x ; margin-bottom: 5px; margin-left: 10px;">
+          <img src="img/iconCorreo.png" width="22px" height="22px">
+          <p class="textoContacto"> contacto@ryrgames.cl</p>
+
+
+
+
+        </div>
+        <div class="row" style="margin-top: 5px ;  margin-left: 10px;">
+          <img src="img/iconPhone.png" width="22px" height="22px;">
+          <p class="textoContacto"> +(+56) 9 93498677</p>
+
+
+
+
+        </div>
+        <div class="row" style="margin-top: 7%;">
+
+          <p style=" display: block; padding-right: 4px;">© 2024 ryrGames. Todos los derechos reservados.
+          </p>
+
+        </div>
+      </div>
+
+
+
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

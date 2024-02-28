@@ -1,0 +1,23 @@
+#carousel1 {
+    position: relative;
+    z-index: 0;
+}
+
+footer {
+    padding: 20px;
+    color: #c5c5c5;
+    background-color: #212529;
+    height: 150px;
+    
+}
+
+body {
+    background-color: #F8F9FA;
+    
+}
+div{
+    margin: auto;
+}
+.text{
+    text-align: center;
+}

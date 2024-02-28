@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        let url ='https://jsonplaceholder.typicode.com/photos';
+        fetch (url)
+            .then(response => response.json()) // => lambda, para reducir codigo, como el +=
+            .then(data => mostrarData(data)) //si el objeto que empieza en [ no tiene nombre se le asigna data
+            .catch(error => console.log(error))
+            const mostrarData=(data)=>{
+                console.log(data)
+                let body=""
+                //recorremos json - api para mostrarlo en la tabla
+                for(var i=0; i<data.length; i++)
+                {
+                    body += `<tr>
+                            <td>${data[i].albumId}</td>
+                            <td>${data[i].id}</td>
+                            <td>${data[i].title}</td>
+                            <td>${data[i].url}</td>
+                            <td>${data[i].thumbnailUrl}</td>
+                            <tr>`
+
+                }
+                document.getElementById('data').innerHTML=body; //innerHTML para modificar "categorias" con el valor del body
+            }
+    </script>
+    <title>Consumo de API</title>
+</head>
+<body>
+    <!--implementamos una api rest metodo get-->
+    <h2>Consumo de API del sitio https://jsonplaceholder.typicode.com/photos</h2>
+    <br><br>
+    <div class="row">
+        <div class="col-md">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID de Album</th>
+                        <th>ID</th>
+                        <th>Titulo</th>
+                        <th>URL</th>
+                        <th>thumbnailUrl</th>
+                    </tr>
+
+                </thead>
+                <tbody id="data">
+
+
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
